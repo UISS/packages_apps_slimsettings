@@ -55,7 +55,7 @@
                 <category android:name="com.ar.slimsettings.SHORTCUT" />
             </intent-filter>
         </activity>
-        <!--activity
+        <activity
             android:name=".fragments.StatusBarClock"
             android:label="Statusbar Clock" >
             <intent-filter>
@@ -63,7 +63,7 @@
 
                 <category android:name="com.ar.slimsettings.SHORTCUT" />
             </intent-filter>
-        </activity-->
+        </activity>
         <activity
             android:name=".fragments.Performance"
             android:clearTaskOnLaunch="true"

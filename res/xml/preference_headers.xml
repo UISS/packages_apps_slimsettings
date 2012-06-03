@@ -75,12 +75,12 @@
 		android:icon="@drawable/ic_slim_settings_toggles"
 		android:summary="@string/header_summary_toggles" />
 
-	<!--header
+	<header
 		android:id="@+id/statusbar_clock"
 		android:title="@string/clock"
 		android:fragment="com.ar.slimsettings.fragments.StatusBarClock"
 		android:icon="@drawable/ic_slim_settings_clock"
-		android:summary="@string/header_summary_clock" /-->
+		android:summary="@string/header_summary_clock" />
 
 	<header
 		android:id="@+id/statusbar_battery"

@@ -71,8 +71,8 @@ public class CreateShortcut extends LauncherActivity {
          //   return R.drawable.ic_slim_settings_power_menu;
         else if (c.equals("StatusBarBattery"))
             return R.drawable.ic_slim_settings_battery;
-        //else if (c.equals("StatusBarClock"))
-          //  return R.drawable.ic_slim_settings_clock;
+        else if (c.equals("StatusBarClock"))
+            return R.drawable.ic_slim_settings_clock;
         else if (c.equals("StatusBarGeneral"))
             return R.drawable.ic_slim_settings_general;
         else if (c.equals("StatusBarToggles"))

@@ -14,6 +14,8 @@ import android.util.Log;
 import com.ar.slimsettings.R;
 import com.ar.slimsettings.SettingsPreferenceFragment;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarClock extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
@@ -21,11 +23,13 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String PREF_ALARM_ENABLE = "alarm";
+    private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
 
     ListPreference mClockStyle;
     ListPreference mClockAmPmstyle;
     CheckBoxPreference mAlarm;
     ColorPickerPreference mColorPicker;
+    ListPreference mClockWeekday;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,12 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mAlarm.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_SHOW_ALARM,
                 1) == 1);
+
+        mClockWeekday = (ListPreference) findPreference(PREF_CLOCK_WEEKDAY);
+        mClockWeekday.setOnPreferenceChangeListener(this);
+        mClockWeekday.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_WEEKDAY,
+                0)));
 
         if (mTablet) {
             PreferenceScreen prefs = getPreferenceScreen();
@@ -101,6 +111,10 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
             Log.e("ROMAN", intHex + "");
+        } else if (preference == mClockWeekday) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_WEEKDAY, val);
         }
         return result;
     }
