@@ -81,7 +81,7 @@
 		<item>@string/toggle_wifi_ap</item>
         <item>@string/toggle_lte</item>
         <item>@string/toggle_2g</item>
-        <item>@string/toggle_torch</item>
+        <item>@string/toggle_data</item>
 		<item>@string/toggle_fast_charge</item>
 	</string-array>
     <!-- Battery styles -->
