@@ -8,6 +8,11 @@
 			android:entries="@array/battery_icon_entries"
 			android:entryValues="@array/battery_icon_values" />
 
+        <CheckBoxPreference
+			android:key="battery_not"
+			android:title="@string/battery_not_title"
+			android:summary="@string/battery_not_summary" />
+
 	<PreferenceCategory
 		android:key="battery_bar_cat"
 		android:title="@string/battery_bar_cat">
@@ -32,7 +37,7 @@
 		<net.margaritov.preference.colorpicker.ColorPickerPreference
 			android:key="battery_bar_color"
 			android:title="@string/battery_bar_color"
-			android:defaultValue="#FFFFFF" />
+			android:defaultValue="#33B5E5" />
 
 		<ListPreference
 			android:key="battery_bar_thickness"
@@ -40,6 +45,5 @@
 			android:entries="@array/battery_bar_thickness_entries"
 			android:entryValues="@array/battery_bar_thickness_values" />
 	</PreferenceCategory>
-
 
 </PreferenceScreen>

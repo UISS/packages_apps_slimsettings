@@ -18,8 +18,9 @@
     <string name="nav_bar">Navigationsleiste</string>
     <string name="tools">Tools</string>
     <string name="weather">Wetter</string>
-	
-	<string name="header_summary_battery">Batterie, 1 % Batterie Mod etc.</string>
+    <string name="signal">Empfang</string>
+
+    <string name="header_summary_battery">Batterie-Leiste, 1 % Batterie Mod etc.</string>
     <string name="header_summary_general_ui">Boot Animation, Fehlerberichte, Rotation, Eingabemethoden etc.</string>
     <string name="header_summary_navigation_bar">Anzuzeigende Buttons, Farbe, Reihenfolge</string>
     <string name="header_summary_lockscreens">Starten von eigenen Apps, Layout</string>
@@ -30,10 +31,11 @@
     <string name="header_summary_toggles">Schalter anpassen</string>
     <string name="header_summary_clock">Uhr Position, AM/PM anzeigen, Farbe</string>
     <string name="header_summary_weather">De-/aktivieren, Standort oder Netzwerkstandort, Intervall</string>
-    <!--string name="header_summary_signal">Empfangs Text (dBm)</string-->
+    <string name="header_summary_signal">Empfangs Text (dBm)</string>
+
     <string name="advanced_settings">Erweiterte Einstellungen</string>
     <string name="misc_short">Sonstiges</string>
-    
+
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Position des Menüs</string>
     <string name="summary_pref_menu_display">Beachte, Deine Menü-Buttons zu entfernen, wenn Du den großen Menü-Button verwendest!</string>
@@ -63,7 +65,6 @@
     <string name="navbar_action_menu">Menü</string>
     <string name="navbar_action_kill">Task beenden</string>
     <string name="navbar_action_power">Power</string>
-    <string name="navbar_action_screenshot">Screenshot</string>
     <string name="navbar_action_none">Leer</string>
 
     <string name="button_transparency_title">Transparenz der Navigations-Buttons</string>
@@ -82,6 +83,8 @@
     <string name="ime_switcher_summary">In der Benachrichtungsleiste während des Tippens anzeigen. (Neustart erforderlich)</string>
 
     <string name="custom_carrier_label_title">Eigener Anbieter-Text</string>
+    <string name="custom_carrier_label_empty">Bitte neuen Text eingeben</string>
+    <string name="custom_carrier_label_warning">Eigener Anbieter-Text ist zur Zeit nicht gesetzt. Sobald dieser gesetzt wurde, lässt es sich ohne einen "data wipe" nicht mehr rückgangig machen</string>
     <string name="longpress_to_kill_title">Zurück-Taste zum Beenden</string>
     <string name="longpress_to_kill_summary">Das Halten der Zurück-Taste beendet die aktuelle App.</string>
 
@@ -109,18 +112,19 @@
     <!-- LCD Density -->
     <string name="lcd_density_wizard">Assistent für LCD Pixeldichte</string>
     <string name="follow_through_title">Alle Schritte vollständig durchführen!</string>
-	<string name="follow_through_summary">Stelle sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines Schrittes zum Nächsten übergehst.</string>
-	<string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
-	<string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
-	<string name="reboot_title">2. Neustarten!</string>
-	<string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
-	<string name="clear_market_data_title">3. Lösche die Daten von Google Play</string>
-	<string name="clear_market_data_cleared">Google Play Daten gelöscht</string>
-	<string name="open_market_title">4. Google Play öffnen und akzeptieren drücken</string>
-	<string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
-	<string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
-	<string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play auftreten, wiederhole die hier genannten Schritte.</string>
-	<!-- Lockscreens -->
+    <string name="follow_through_summary">Stelle sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines Schrittes zum Nächsten übergehst.</string>
+    <string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
+    <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
+    <string name="reboot_title">2. Neustarten!</string>
+    <string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
+    <string name="clear_market_data_title">3. Lösche die Daten vom Google Play Store</string>
+    <string name="clear_market_data_cleared">Google Play Store Daten gelöscht</string>
+    <string name="open_market_title">4. Google Play Store öffnen und akzeptieren drücken</string>
+    <string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
+    <string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
+    <string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play Store auftreten, wiederhole die hier genannten Schritte.</string>
+
+    <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Aussehen der Bildschirmsperre</string>
     <string name="pref_lockscreen_layout_summary">Nach dem Wechsel des Aussehens müssen die Verknüpfungen erneut festgelegt werden!</string>
 
@@ -167,7 +171,7 @@
     <string name="lockscreen_calendar">Lockscreen Kalender</string>
     <string name="lockscreen_calendar_title">Aktivieren</string>
     <string name="lockscreen_calendar_summary">Zeige kommende Veranstaltungen auf dem Entsperrbildschirm.</string>
-    <string name="lockscreen_calendar_sources_title">Kalender Quelle</string>
+    <string name="lockscreen_calendar_sources_title">Kalenderquelle</string>
     <string name="lockscreen_calendar_sources_summary">Wähle die Kalender die angezeigt werden sollen.</string>
     <string name="lockscreen_calendar_range_title">Zeitspanne</string>
     <string name="lockscreen_calendar_range_summary">Wähle die anzuzeigende Zeitspanne.</string>
@@ -268,6 +272,10 @@
 
     <string name="enabled_toggles_title">Aktivierte Schalter</string>
     <string name="enabled_toggles_summary">Die anzuzeigenden Schalter wählen.</string>
+
+    <string name="toggles_display_dialog">Wähle zu benutzende Schalter:</string>
+    <string name="toggles_display_close">Schließen</string>
+
     <string name="toggles_order_title">Reihenfolge der Schalter</string>
     <string name="toggles_order_summary">Die Reihenfolge wählen, in der die Schalter angezeigt werden.</string>
     <string name="brightness_location_title">Position des Helligkeitsreglers</string>

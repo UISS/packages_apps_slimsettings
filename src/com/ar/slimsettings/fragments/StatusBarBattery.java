@@ -1,8 +1,6 @@
 
 package com.ar.slimsettings.fragments;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import android.app.Activity;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -11,21 +9,24 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.util.Log;
 
 import com.ar.slimsettings.R;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarBattery extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String PREF_BATT_ICON = "battery_icon_list";
+    private static final String PREF_BATT_NOT = "battery_not";
     private static final String PREF_BATT_BAR = "battery_bar_list";
     private static final String PREF_BATT_BAR_STYLE = "battery_bar_style";
     private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
-    private static final String PREF_BATT_ICON = "battery_icon_list";
 
     ListPreference mBatteryIcon;
+    CheckBoxPreference mBatteryNotification;
     ListPreference mBatteryBar;
     ListPreference mBatteryBarStyle;
     ListPreference mBatteryBarThickness;
@@ -45,6 +46,11 @@ public class StatusBarBattery extends PreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_BATTERY_ICON,
                 0))
                 + "");
+
+        mBatteryNotification = (CheckBoxPreference) findPreference(PREF_BATT_NOT);
+        mBatteryNotification.setChecked(Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_BATTERY_DISPLAY, 0) == 1);
 
         mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
@@ -79,20 +85,31 @@ public class StatusBarBattery extends PreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mBatteryBarChargingAnimation) {
+        if (preference == mBatteryNotification) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_BATTERY_DISPLAY,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+
+        } else if (preference == mBatteryBarChargingAnimation) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mBatteryBarColor) {
+        if (preference == mBatteryIcon) {
+
+            int val = Integer.parseInt((String) newValue);
+            return Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_ICON, val);
+        } else if (preference == mBatteryBarColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
                     .valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
@@ -120,11 +137,6 @@ public class StatusBarBattery extends PreferenceFragment implements
             return Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
 
-        } else if (preference == mBatteryIcon) {
-
-            int val = Integer.parseInt((String) newValue);
-            return Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_BATTERY_ICON, val);
         }
         return false;
     }

@@ -60,7 +60,7 @@ public class SlimSettingsActivity extends PreferenceActivity implements ButtonBa
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
+        mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
@@ -213,15 +213,6 @@ public class SlimSettingsActivity extends PreferenceActivity implements ButtonBa
             Header header = target.get(i);
             // Ids are integers, so downcasting
             int id = (int) header.id;
-
-            if (id == R.id.led) {
-                if (!hasNotificationLed) {
-                    target.remove(header);
-                }
-            } else if (id == R.id.power_saver && mTablet)
-                target.remove(header);
-            else if (id == R.id.functionality & mTablet)
-                target.remove(header);
 
             // Increment if the current one wasn't removed by the Utils code.
             if (target.get(i) == header) {
