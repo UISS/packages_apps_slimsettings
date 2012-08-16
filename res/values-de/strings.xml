@@ -41,22 +41,27 @@
     <string name="summary_pref_menu_display">Beachte, Deine Menü-Buttons zu entfernen, wenn Du den großen Menü-Button verwendest!</string>
     <string name="navigation_bar">Navigationsleiste</string>
     <string name="navigation_bar_tint_title">Farbe der Navigationsleiste</string>
+    <string name="navigation_bar_glow_tint_title">Navigationsleiste Leuchtfarbe</string>
+    <string name="navigation_bar_glow_tint_summary">Wenn ein Knopf gedrückt wird, leuchtet dieser auf. Hier kann die Farbe des Aufleuchtens eingestellt werden</string>
+    <string name="navigation_bar_height_title">Höhe der Navigationsleiste</string>
+    <string name="navigation_bar_width_title">Breite der Navigationsleiste</string>
+
     <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
     <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
 
     <string name="navbar_order_title">Reihenfolge der Navigations-Buttons</string>
-    <string name="navbar_order_summary">Die Reihenfolge der Navigations-Buttonsanpassen.</string>
+    <string name="navbar_order_summary">Die Reihenfolge der Navigations-Buttons anpassen.</string>
 
-    <string name="navbar_button_cat">Navigationsleisten Knöpfe</string>
+    <string name="navbar_button_cat">Navigationsleistenknöpfe</string>
 
     <string name="navbar_qty_title">Anzahl der Navigationsknöpfe</string>
-    <string name="navbar_qty_summary">Wähle die Anzahl der Navigations Knöpfe</string>
+    <string name="navbar_qty_summary">Wähle die Anzahl der Navigationsknöpfe</string>
 
     <string name="enabled_navbar_buttons_title">Aktivierte Navigations-Buttons</string>
     <string name="enabled_navbar_buttons_summary">Auswählen, welche Navigations-Buttons sichtbar sein sollen.</string>
 
     <string name="navbar_action_title">Knopf %1$s Aktion &amp; Icon</string>
-    <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem drücken</string>
+    <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem Drücken</string>
 
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Zurück</string>
@@ -91,10 +96,10 @@
     <string name="enable_volume_options">Aktiviere Volumen Optionen</string>
 
     <string name="rotate_180_title">180° Rotation erlauben</string>
-    <string name="rotate_180_summary">Erlaube Deinem Gerät eine 180° Rotation!</string>
+    <string name="rotate_180_summary">Erlaube deinem Gerät eine 180° Rotation!</string>
 
     <string name="horizontal_recents_task_panel_title">Horizontaler Task-Bildschirm</string>
-    <string name="horizontal_recents_task_panel_summary">WebOS-Aussehen für den Task-Wechsler. Die Benutzeroberfläche wird neu starten und in 10 Sekunden wieder erscheinen. Falls nicht, führe ein Neustart durch.</string>
+    <string name="horizontal_recents_task_panel_summary">WebOS-Aussehen für den Task-Wechsler. Die Benutzeroberfläche wird neu starten und in 10 Sekunden wieder erscheinen. Falls nicht, führe einen Neustart durch.</string>
 
     <string name="disable_bootanimation_title">Boot-Animation deaktivieren</string>
     <string name="disable_bootanimation_summary">Deaktiviert die ROM-Animation beim Startvorgang.</string>
@@ -102,7 +107,7 @@
     <string name="disable_bugmailer_title">Fehlerberichte deaktivieren</string>
 
     <string name="lcd_density_title">LCD Pixeldichte</string>
-    <string name="lcd_density_summary">unbekannt</string>
+    <string name="lcd_density_summary">Ändert die Pixeldichte des Bildschirms</string>
 
     <!-- CRT animations -->
     <string name="crt_animations_header">An-/Aus-Animationen</string>
@@ -116,7 +121,7 @@
     <string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
     <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
     <string name="reboot_title">2. Neustarten!</string>
-    <string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
+    <string name="reboot_summary">Kehre nach dem Neustart zum Assistenten zurück, um die übrigen Schritte durchzuführen!</string>
     <string name="clear_market_data_title">3. Lösche die Daten vom Google Play Store</string>
     <string name="clear_market_data_cleared">Google Play Store Daten gelöscht</string>
     <string name="open_market_title">4. Google Play Store öffnen und akzeptieren drücken</string>
@@ -135,17 +140,17 @@
     <string name="summary_pref_lockscreen_octo_targets">Fügt sehr viele Verknüpfungen zur Bildschirmsperre hinzu.</string>
 
     <string name="title_pref_lockscreen_menu_unlock">Mit Menü-Taste entsperren</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt die Bildschirmsperre. (Neustart erforderlich)</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt den Bildschirm. (Neustart erforderlich)</string>
     <string name="title_lockscreen_user_timeout_override">Wartezeit zum Sperren des Bildschirms</string>
     <string name="summary_lockscreen_user_timeout_override">Android\'s Timeout Einstellung verwenden, nachdem der Bildschirm manuell ausgeschaltet wurde. Normalerweise wird das Telefon sofort gesperrt, wenn der Bildschirm manuell ausgeschaltet wird.</string>
     <string name="show_lock_before_unlock_title">Bildschirmsperre vor dem Entsperren</string>
-    <string name="show_lock_before_unlock_summary">Zeige die standard Bildschirmsperre vor dem sicheren Entsperren.</string>
+    <string name="show_lock_before_unlock_summary">Zeige die Standard Bildschirmsperre vor dem sicheren Entsperren.</string>
     <string name="lockscreen_battery_title">Batterie Prozentanzeige</string>
     <string name="lockscreen_battery_summary">Immer die aktuelle Kapazität der Batterie in der Bildschirmsperre anzeigen (in Prozent).</string>
     <string name="lockscreen_weather_title">Wetter</string>
     <string name="lockscreen_weather_summary">Wetter-Informationen in der Bildschirmsperre anzeigen. ROM-Control\'s Wetter-Service muss hierfür eingeschaltet sein.</string>
     <string name="volume_wake_title">Aufwachen mit Lautstärketasten</string>
-    <string name="volume_wake_summary">Betätigen der Lautstärketasten lässt den ausgeschalteten Bildschirm wieder einschalten.</string>
+    <string name="volume_wake_summary">Betätigen der Lautstärketasten schaltet den Bildschirm wieder ein.</string>
     <string name="volume_music_controls_title">Musik-Steuerung mit Lautstärketasten</string>
     <string name="volume_music_controls_summary">Lautstärketasten gedrückt halten um Lieder zu überspringen wenn der Bildschirm ausgeschaltet ist. Aufwachen mit Lautsärketasten funktioniert nicht, wenn Musik gespielt wird.</string>
     <string name="lockscreen_show_nav_title">Navigationsleiste verstecken</string>
@@ -232,6 +237,9 @@
 
     <string name="title_status_bar_brightness_toggle">Helligkeitsregler aktivieren</string>
     <string name="summary_status_bar_brightness_toggle">Helligkeitsregelung mit dem Berühren der Benachrichtigungsleiste anpassen.</string>
+
+    <string name="icon_transparency_title">Benachrichtigungssymbol-Transparenz</string>
+
     <string name="adb_icon_title">USB Debugging Symbol aktivieren</string>
     <string name="adb_icon_summary">Wutang</string>
 
@@ -442,62 +450,5 @@
     <string name="color_blue_title">Blau</string>
     <string name="reset_defaults">Auf Standard zurücksetzten</string>
 
-    <!-- Weather Codes -->
-    <string name="weather_0">Tornado</string>
-    <string name="weather_1">Tropensturm</string>
-    <string name="weather_2">Hurrikan</string>
-    <string name="weather_3">schwere Gewitter</string>
-    <string name="weather_4">Gewitter</string>
-    <string name="weather_5">Regen und Schnee</string>
-    <string name="weather_6">Regen und Graupel</string>
-    <string name="weather_7">Schnee und Graupel</string>
-    <string name="weather_8">gefrierender Nieselregen</string>
-    <string name="weather_9">Nieselregen</string>
-    <string name="weather_10">gefrierender Regen</string>
-    <string name="weather_11">Regenschauer</string>
-    <string name="weather_12">Regenschauer</string>
-    <string name="weather_13">Schneegestöber</string>
-    <string name="weather_14">meist bewölkt</string>
-    <string name="weather_15">Schneetreiben</string>
-    <string name="weather_16">Schnee</string>
-    <string name="weather_17">Hagel</string>
-    <string name="weather_18">Schneeregen</string>
-    <string name="weather_19">Staub</string>
-    <string name="weather_20">neblig</string>
-    <string name="weather_21">Dunst</string>
-    <string name="weather_22">dunstig</string>
-    <string name="weather_23">stürmisch</string>
-    <string name="weather_24">windig</string>
-    <string name="weather_25">Kälte</string>
-    <string name="weather_26">bewölkt</string>
-    <!-- mostly cloudy (night) -->
-    <string name="weather_27">leicht bewölkt</string>
-    <!-- mostly cloudy (day) -->
-    <string name="weather_28">leicht bewölkt</string>
-    <!-- partly cloudy (night) -->
-    <string name="weather_29">leicht bewölkt</string>
-    <!-- partly cloudy (day) -->
-    <string name="weather_30">leicht bewölkt</string>
-    <!-- clear (night) -->
-    <string name="weather_31">klar</string>
-    <string name="weather_32">sonnig</string>
-    <!-- fair (night) -->
-    <string name="weather_33">heiter</string>
-    <!-- fair (day) -->
-    <string name="weather_34">heiter</string>
-    <string name="weather_35">Regen und Hagel</string>
-    <string name="weather_36">heiß</string>
-    <string name="weather_37">örtliche Gewitter</string>
-    <string name="weather_38">vereinzelte Gewitter</string>
-    <string name="weather_39">vereinzelte Gewitter</string>
-    <string name="weather_40">vereinzelte Regenschauer</string>
-    <string name="weather_41">schwerer Schneefall</string>
-    <string name="weather_42">vereinzelt Schneeschauer</string>
-    <string name="weather_43">schwerer Schneefall</string>
-    <string name="weather_44">leicht bewölkt</string>
-    <string name="weather_45">Gewitter</string>
-    <string name="weather_46">Schneeschauer</string>
-    <string name="weather_47">örtliche Gewitter</string>
-    <!-- Forecase unavailable -->
-    <string name="weather_3200"></string>
+
 </resources>

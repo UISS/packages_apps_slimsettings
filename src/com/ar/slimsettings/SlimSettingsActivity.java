@@ -1,26 +1,19 @@
 
 package com.ar.slimsettings;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,10 +28,16 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import android.content.ComponentName;
+import com.ar.slimsettings.service.BootService;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
 public class SlimSettingsActivity extends PreferenceActivity implements ButtonBarHandler {
 
-    private static final String TAG = "Slim_Settings";
+    private static final String TAG = "Slim Settings";
 
     private static boolean hasNotificationLed;
     private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
@@ -60,7 +59,8 @@ public class SlimSettingsActivity extends PreferenceActivity implements ButtonBa
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
+        mTablet = Settings.System
+                .getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
@@ -78,17 +78,51 @@ public class SlimSettingsActivity extends PreferenceActivity implements ButtonBa
             setTitle(R.string.app_name);
         }
 
-        if (getIntent().getAction().equals("com.ar.slimsettings.START_NEW_FRAGMENT")) {
+        if (!BootService.servicesStarted) {
+            getApplicationContext().startService(
+                    new Intent(getApplicationContext(), BootService.class));
+        }
+
+        if ("com.ar.slimsettings.START_NEW_FRAGMENT".equals(getIntent().getAction())) {
             String className = getIntent().getStringExtra("ar_fragment_name").toString();
-            if (!className.equals("com.ar.slimsettings.SlimSettingsActivity")) {
+            Class<?> cls = null;
+            try {
+                cls = Class.forName(className);
+            } catch (ClassNotFoundException e1) {
+                // can't find the class at all, die
+                return;
+            }
+
+            try {
+                cls.asSubclass(SlimSettingsActivity.class);
+                return;
+            } catch (ClassCastException e) {
+                // fall through
+            }
+
+            try {
+                cls.asSubclass(Fragment.class);
                 Bundle b = new Bundle();
                 b.putBoolean("started_from_shortcut", true);
-                // startPreferencePanel(className, b, 0, null, null, 0);
                 isShortcut = true;
-                startWithFragment(className, null, null, 0);
+                startWithFragment(className, b, null, 0);
                 finish(); // close current activity
+                return;
+            } catch (ClassCastException e) {
+            }
+
+            try {
+                cls.asSubclass(Activity.class);
+                isShortcut = true;
+                Intent activity = new Intent(getApplicationContext(), cls);
+                activity.putExtra("started_from_shortcut", true);
+                startActivity(activity);
+                finish(); // close current activity
+                return;
+            } catch (ClassCastException e) {
             }
         }
+
     }
 
     @Override
@@ -126,6 +160,9 @@ public class SlimSettingsActivity extends PreferenceActivity implements ButtonBa
                 boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
                 p.edit().putBoolean(KEY_USE_ENGLISH_LOCALE, !useEnglishLocale).apply();
                 recreate();
+                return true;
+            case android.R.id.home:
+                onBackPressed();
                 return true;
             default:
                 return super.onContextItemSelected(item);

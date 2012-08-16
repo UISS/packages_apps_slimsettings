@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -13,6 +14,7 @@
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:hardwareAccelerated="true"
@@ -31,7 +33,7 @@
         </activity>
         <activity
             android:name=".fragments.UserInterface"
-            android:label="User Interface" >
+            android:label="@string/title_ui" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +42,7 @@
         </activity>
         <activity
             android:name=".fragments.StatusBarClock"
-            android:label="Statusbar Clock" >
+            android:label="@string/title_statusbar_clock" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,7 +51,7 @@
         </activity>
          <activity
             android:name=".fragments.StatusBarToggles"
-            android:label="Statusbar Toggles" >
+            android:label="@string/title_statusbar_toggles" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,14 +60,86 @@
         </activity>
         <activity
             android:name=".fragments.StatusBarBattery"
-            android:label="Statusbar Battery" >
+            android:label="@string/title_statusbar_battery" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="com.ar.slimsettings.SHORTCUT" />
             </intent-filter>
         </activity>
-        
-    </application>
+        <activity
+            android:name=".fragments.Navbar"
+            android:label="@string/title_navbar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ar.slimsettings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.LEDControl"
+            android:label="@string/title_led" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ar.slimsettings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.Lockscreens"
+            android:label="@string/title_lockscreens" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ar.slimsettings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+		<activity
+            android:name=".fragments.Sound"
+            android:label="@string/title_sound" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="com.ar.slimsettings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity 
+			android:name=".fragments.Weather" 
+			android:label="@string/title_sound" >
+		</activity>
+        <activity
+            android:name=".performance.Performance"
+            android:label="@string/title_performance" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ar.slimsettings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShareToClipboard"
+            android:label="@string/title_clipboard_share" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="CreateShortcut"
+            android:theme="@style/Theme.CreateShortCut" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".service.BootService" />
+        <service android:name=".service.HeadphoneService" />
+        <service android:name=".service.FlipService" />
+
+    </application>
 </manifest>

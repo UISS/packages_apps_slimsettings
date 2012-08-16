@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<PreferenceCategory
-		android:key="misc"
-		android:title="@string/misc_short">
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
 
          <CheckBoxPreference
-			android:key="enable_volume_options"
-			android:title="@string/enable_volume_options" />
+            android:key="status_bar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary"
+            android:defaultValue="false" />
 
-	</PreferenceCategory>
+
+        <Preference
+            android:key="notification_wallpaper"
+            android:title="@string/notification_wallpaper_title"
+            android:summary="@string/notification_wallpaper_summary" />
+
+        <Preference
+            android:key="notification_wallpaper_alpha"
+            android:title="@string/notif_wallpaper_alpha_title" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

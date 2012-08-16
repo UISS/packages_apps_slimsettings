@@ -6,15 +6,15 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
+import com.ar.slimsettings.SettingsPreferenceFragment;
 import com.ar.slimsettings.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class StatusBarBattery extends PreferenceFragment implements
+public class StatusBarBattery extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_BATT_ICON = "battery_icon_list";
@@ -36,7 +36,7 @@ public class StatusBarBattery extends PreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTitle(R.string.title_statusbar_battery);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_statusbar_battery);
 
